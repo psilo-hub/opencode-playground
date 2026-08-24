@@ -58,7 +58,7 @@ Load the matching skill before performing these activities:
 | Modeling domain concepts | `ddd` |
 | Adding abstractions or dependencies; boundary checks | `architecture` |
 | Recording durable decisions | `architecture-decisions` |
-| Verifying changes | `testing`; JVM/Maven specifics: `maven` |
+| Verifying changes | `testing`; build tooling: bundled `maven` (JVM) or the project-generated `<buildtool>` skill created during bootstrap |
 | Creating or updating roadmaps | `todo-management`, `task-decomposition` |
 | Locating code or structure | `repository-exploration` |
 | Handling large outputs under context pressure | `context-management` |

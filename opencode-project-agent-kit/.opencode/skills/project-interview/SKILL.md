@@ -10,6 +10,8 @@ Provide concise answer options whenever practical.
 
 Adapt questions to previous answers and repository evidence.
 
+For the chosen build system, capture the exact build, test, and full-verification commands — they seed the build skill generated during bootstrap (unless the project is JVM/Maven, which uses the bundled `maven` skill).
+
 The goal is sufficient information for:
 - project initialization,
 - initial module boundaries,
