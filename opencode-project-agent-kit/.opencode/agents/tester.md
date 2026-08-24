@@ -3,8 +3,7 @@ description: Runs tests/builds and analyzes verification results while minimizin
 mode: subagent
 temperature: 0.1
 permission:
-  edit: allow
-  write: allow
+  edit: ask
   task:
     "*": deny
 ---
@@ -45,4 +44,4 @@ Recommended next action:
 
 Do not return complete build logs unless explicitly requested.
 
-If test code must be added as part of the assigned verification task, keep it focused and consistent with TDD.
+Editing files requires explicit approval. If verification shows that test code must be added or changed, report the needed change and let the implementer apply it — write test code yourself only when explicitly approved, keeping it focused and consistent with TDD.
