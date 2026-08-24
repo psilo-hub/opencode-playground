@@ -1,3 +1,7 @@
+---
+name: project-bootstrap
+description: Use ONLY when initializing a new project from an empty repository after the interview is complete. Creates PROJECT.md, the initial module structure, module README and TODO files, DECISIONS records, and the initial dependency-aware roadmap.
+---
 # Project Bootstrap
 
 For an empty project:

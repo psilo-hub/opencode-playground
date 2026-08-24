@@ -1,3 +1,7 @@
+---
+name: clean-code
+description: Use when writing or reviewing production code. Enforces meaningful names, small cohesive units, single responsibilities, low coupling, simple control flow; flags god classes, speculative abstractions, deep nesting, and unrelated refactoring.
+---
 # Clean Code
 
 Prefer:
@@ -13,6 +17,7 @@ Avoid:
 - god classes,
 - speculative abstractions,
 - meaningless names,
+- unnecessary comments,
 - deep nesting,
 - unrelated refactoring.
 

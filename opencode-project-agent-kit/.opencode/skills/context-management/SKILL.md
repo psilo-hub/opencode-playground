@@ -1,3 +1,7 @@
+---
+name: context-management
+description: Use when tool output may be large — builds, test runs, searches, logs — or when the parent context is filling up. Delegate noisy operations to sub-agents, read only relevant file sections, and return conclusions instead of raw dumps.
+---
 # Context Management
 
 ## Goal

@@ -1,3 +1,7 @@
+---
+name: repository-exploration
+description: Use when locating code, symbols, or structure in a repository before reading files. Scope-first search, targeted inspection of the smallest useful set of files, structural summaries instead of full-file dumps.
+---
 # Repository Exploration
 
 1. Identify task scope.

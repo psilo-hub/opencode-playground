@@ -1,3 +1,7 @@
+---
+name: project-interview
+description: Use ONLY during project discovery in an empty or underspecified repository. Runs an adaptive interview, exactly one question at a time with concise options, until enough exists to initialize modules and a first roadmap; persists progress so interrupted interviews resume.
+---
 # Project Interview
 
 Conduct one question at a time.
@@ -15,3 +19,5 @@ The goal is sufficient information for:
 Do not attempt to resolve every future implementation detail.
 
 Persist progress so an interrupted interview can resume.
+
+In existing repositories: inspect before asking questions, infer what can safely be inferred, ask only about important missing information, and avoid rebuilding existing structure unnecessarily.

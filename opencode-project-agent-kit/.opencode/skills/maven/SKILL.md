@@ -1,3 +1,7 @@
+---
+name: maven
+description: Use when running Maven builds or tests in JVM projects. Choose the narrowest useful goal, route noisy output through the tester sub-agent, and analyze failures down to the first root cause without pasting complete logs.
+---
 # Maven Verification
 
 Prefer the narrowest useful Maven command.

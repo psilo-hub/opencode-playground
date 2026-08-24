@@ -1,3 +1,7 @@
+---
+name: tdd
+description: Use when implementing behavior changes or writing tests. Follows red-green-refactor — express behavior in a focused test, confirm it fails for the right reason, implement minimally, refactor safely.
+---
 # Test-Driven Development
 
 Use:
@@ -12,3 +16,5 @@ RED → GREEN → REFACTOR
 6. Run relevant regression tests.
 
 Prefer behavior-focused tests over implementation-detail tests.
+
+Do not weaken or remove tests simply because they make an implementation inconvenient.
