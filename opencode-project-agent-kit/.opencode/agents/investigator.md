@@ -4,7 +4,28 @@ mode: subagent
 temperature: 0.1
 permission:
   edit: deny
-  write: deny
+  read: allow
+  glob: allow
+  grep: allow
+  list: allow
+  bash:
+    "*": deny
+    "ls*": allow
+    "pwd": allow
+    "cat*": allow
+    "head*": allow
+    "tail*": allow
+    "wc*": allow
+    "stat*": allow
+    "du*": allow
+    "file*": allow
+    "grep*": allow
+    "rg*": allow
+    "git status*": allow
+    "git log*": allow
+    "git diff*": allow
+    "git show*": allow
+    "git blame*": allow
   task:
     explorer: allow
 ---
@@ -33,3 +54,5 @@ Return:
 6. Remaining uncertainty.
 
 Keep output concise.
+
+Shell use is limited to the whitelisted read-only commands in your permissions (file inspection and git history); any other command is denied — do not retry it, use the read/search tools instead.

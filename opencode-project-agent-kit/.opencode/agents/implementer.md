@@ -4,7 +4,6 @@ mode: subagent
 temperature: 0.1
 permission:
   edit: allow
-  write: allow
   task:
     explorer: allow
     tester: allow

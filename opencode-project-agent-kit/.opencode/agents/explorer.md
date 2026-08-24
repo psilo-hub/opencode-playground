@@ -4,7 +4,11 @@ mode: subagent
 temperature: 0.1
 permission:
   edit: deny
-  write: deny
+  bash: deny
+  read: allow
+  glob: allow
+  grep: allow
+  list: allow
   task:
     "*": deny
 ---
