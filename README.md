@@ -1,7 +1,7 @@
 # opencode-playground
 
 A reusable **project agent kit** for [opencode](https://opencode.ai): one
-coordinating agent, eight specialists, fourteen engineering skills, slash
+coordinating agent, eight specialists, fifteen engineering skills, slash
 commands for the main workflows, and an enforced permission model — ready
 to drop into any repository.
 
@@ -15,9 +15,9 @@ Everything lives in [`opencode-project-agent-kit/`](opencode-project-agent-kit/)
 | `PROJECT.md` | Project blueprint, filled by the interview. |
 | `opencode.json` | Minimal config; `default_agent: orchestrator`. |
 | `.opencode/agents/` | 9 agent definitions (roles + permission guards). |
-| `.opencode/skills/` | 14 skills (`SKILL.md` each) + bootstrap templates. |
-| `.opencode/command/` | `/bootstrap`, `/interview`, `/plan`, `/review`. |
-| `.opencode/state/` | Resumable interview state (per project). |
+| `.opencode/skills/` | 15 skills (`SKILL.md` each) + bootstrap templates. |
+| `.opencode/command/` | `/bootstrap`, `/interview`, `/plan`, `/review`, `/adopt`. |
+| `.opencode/state/` | Resumable interview and adoption state (per project). |
 
 ## Agent roster
 
@@ -46,6 +46,7 @@ the full permission matrix lives in each agent definition.
 
 For an empty repository, start with the interview instead: it produces the
 blueprint, module structure, and initial roadmap before any implementation.
+To bring an existing repository under this operating model, run `/adopt`.
 
 ## Quick start — adopt into a project
 
@@ -62,13 +63,18 @@ blueprint, module structure, and initial roadmap before any implementation.
 
 2. Restart opencode — config-time files load once at startup.
 3. Empty project: run `/bootstrap` and answer the interview.
-   Existing project: just describe a task — the orchestrator inspects
-   first and asks only what it cannot infer.
+   Existing project: run `/adopt` — it analyzes the repository, reports
+   gaps against the expected structure, applies additive changes
+   (`PROJECT.md` draft, module docs, build skill), and asks one question
+   at a time before touching any existing file. Use `/adopt --dry-run`
+   to get the gap report only.
 
 You end up with `PROJECT.md`, module skeletons with `README.md`/`TODO.md`,
 a phased roadmap, and — for non-JVM projects — a generated build skill
 holding your real build/test commands. JVM/Maven projects use the bundled
-`maven` skill out of the box.
+`maven` skill out of the box. After `/adopt`, the same artifacts are
+produced for an existing repository, derived from code analysis instead
+of the interview.
 
 ## Using the kit without copying it
 

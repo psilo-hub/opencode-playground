@@ -4,6 +4,8 @@ This repository is managed according to the project operating rules in `AGENTS.m
 
 If this is a newly initialized project, start with the project interview before making significant implementation decisions.
 
+If you have just copied this kit into an existing repository, run `/adopt`: it analyzes the codebase, reports what is missing relative to the expected structure, applies obvious additions, and asks before changing anything that already exists.
+
 ## Documentation structure
 
 Each module should contain:
@@ -21,6 +23,7 @@ Workflow entry points defined in `.opencode/command/`:
 | Command | Purpose |
 |---------|---------|
 | `/bootstrap` | Initialize a new project in an empty repository (interview → blueprint → roadmap). |
+| `/adopt [mode]` | Adopt this kit into an existing repository (analyze → gap report → additive changes → conflict questions; `--dry-run` reports only). |
 | `/interview` | Start or resume the one-question-at-a-time discovery interview. |
 | `/plan <goal>` | Produce a read-only, dependency-aware implementation plan. |
 | `/review [scope]` | Independently review changes; findings ordered by severity. |
