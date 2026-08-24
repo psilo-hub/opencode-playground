@@ -21,6 +21,17 @@ Each item should include:
 
 Cross-module dependencies must reference concrete TODO IDs.
 
+## Status values
+
+Every item carries exactly one status:
+
+- `pending` — not started; dependencies may be unmet.
+- `in-progress` — actively being implemented.
+- `blocked` — cannot proceed; the entry must name the blocking TODO ID or decision.
+- `done` — verified complete (tests/build evidence).
+
+No other status values are allowed. Moving an item to `done` requires verification, not just finished code.
+
 Before starting an item, verify its dependencies are satisfied and identify blocked items.
 
 When an item changes status, update dependent items where necessary.
