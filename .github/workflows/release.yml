@@ -1,0 +1,38 @@
+name: Release
+
+# Creates a GitHub release whose only asset is a single zip containing
+# the entire content of opencode-project-agent-kit/ (dotfiles included).
+# Trigger: push a version tag, e.g. v1.0.0
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Zip opencode-project-agent-kit
+        run: |
+          cd opencode-project-agent-kit
+          # zip from inside the folder so entries are root-relative
+          # and hidden entries (.opencode/) are included
+          zip -r "../opencode-project-agent-kit-${{ github.ref_name }}.zip" .
+          cd ..
+          unzip -l "opencode-project-agent-kit-${{ github.ref_name }}.zip"
+
+      - name: Create GitHub release with the zip as its only asset
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${{ github.ref_name }}" \
+            "opencode-project-agent-kit-${{ github.ref_name }}.zip" \
+            --title "opencode-project-agent-kit ${{ github.ref_name }}" \
+            --notes "Single-file distribution: complete content of opencode-project-agent-kit/ (including .opencode/) as one zip."
