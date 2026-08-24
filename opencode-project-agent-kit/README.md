@@ -13,3 +13,17 @@ Each module should contain:
 - `DECISIONS.md` — important architectural/domain decisions, when applicable.
 
 See `PROJECT.md` for the high-level project definition.
+
+## Slash commands
+
+Workflow entry points defined in `.opencode/command/`:
+
+| Command | Purpose |
+|---------|---------|
+| `/bootstrap` | Initialize a new project in an empty repository (interview → blueprint → roadmap). |
+| `/interview` | Start or resume the one-question-at-a-time discovery interview. |
+| `/plan <goal>` | Produce a read-only, dependency-aware implementation plan. |
+| `/review [scope]` | Independently review changes; findings ordered by severity. |
+
+Commands require an opencode restart after being added or changed.
+
